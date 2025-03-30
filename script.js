@@ -1,34 +1,40 @@
 const button = document.querySelector("button");
 const score = document.querySelector(".love-score");
+const timeSpent = document.getElementById("time-spent");
+const talkTime = document.getElementById("talk-time");
 // Check if input fields are empty
-var x;
-x = document.getElementById("input").value;
-function empty() {
-  var x;
-  x = document.getElementById("input").value;
-  if (x == "") {
-    alert("Fill in the required fields");
-    return false;
+
+function checkInputFields() {
+  const inputs = document.querySelectorAll("input");
+  for (let input of inputs) {
+    if (input.value.trim === "") {
+      alert("Fill in the required fields");
+      return false;
+    }
   }
+  return true;
 }
 // Submit form
-let form = document.getElementsByTagName("form")[0];
+const form = document.getElementsByTagName("form")[0];
 form.addEventListener("submit", (e) => {
-  if (x == true || y == true) {
-    var y = document.getElementById("talk-time").options[([0], [1], [2])].text;
-    var x = document.getElementById("time-spent").options[0].text;
-    score.innerHTML = Math.trunc(Math.random() * 70) + 1 + "%";
-  } else {
-    score.innerHTML = Math.trunc(Math.random() * 100) + 1 + "%";
-  }
-
   e.preventDefault();
-  button.innerHTML = "Refresh";
-  button.style.backgroundColor = "#222";
-});
-// Refresh button
-button.addEventListener("click", (e) => {
-  if (button.innerHTML == "Refresh") {
-    location.reload();
+
+  if (checkInputFields) {
+    if (timeSpent.value == 3 || timeSpent.value == 4) {
+      if (talkTime.value == 4) {
+        score.innerHTML = Math.trunc(Math.random() * (100 - 70) + 70) + "%";
+      }
+    } else {
+      score.innerHTML = Math.trunc(Math.random() * 70) + 1 + "%";
+    }
+    // Change button text to "Refresh"
+    button.textContent = "Refresh";
+
+    // Modify button behavior to reload page on next click
+    button.removeEventListener("click", refreshPage);
+    button.addEventListener("click", refreshPage);
   }
 });
+function refreshPage() {
+  location.reload();
+}

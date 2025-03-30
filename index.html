@@ -23,46 +23,57 @@
     <!-- Input details -->
     <form>
       <div class="inputs">
+        <!-- Your name -->
         <div>
           <label>Your Name:</label><br />
-          <input type="text" id="input" required /><br /><br />
+          <input
+            type="text"
+            id="input"
+            required
+            autocomplete="off"
+          /><br /><br />
+          <!-- Your age -->
           <label>Your Age:</label><br />
-          <input type="number" id="input" min="1" required />
+          <input type="number" id="input" min="1" required autocomplete="off" />
         </div>
+        <!-- Partner's name -->
         <div>
           <label>Partner's Name:</label><br />
-          <input type="text" id="input" required /><br /><br />
+          <input
+            type="text"
+            id="input"
+            required
+            autocomplete="off"
+          /><br /><br />
           <label>Partner's Age:</label><br />
-          <input type="number" id="input" min="1" required />
+          <input type="number" id="input" min="1" required autocomplete="off" />
         </div>
       </div>
+      <!-- Questions -->
       <div class="questions">
         <div>
           <label>How long have you been together?</label><br />
           <select id="time-spent">
-            <option>Less than a year</option>
-            <option>About two years or less</option>
-            <option>About Five years or less</option>
-            <option>It's been long</option>
+            <option value="1">Less than a year</option>
+            <option value="2">About a year plus</option>
+            <option value="3">Two to Five years</option>
+            <option value="4">More than Five years</option>
             <br />
           </select>
         </div>
         <div>
           <label>How often do you communicate with each other?</label><br />
           <select id="talk-time">
-            <option>We don't communicate</option>
-            <option>Once in a while</option>
-            <option>It's been long we spoke</option>
-            <option>We communicate frequently</option>
+            <option value="1">We don't talk anymore</option>
+            <option value="2">Once in a while</option>
+            <option value="3">It's been long we spoke</option>
+            <option value="4">We communicate frequently</option>
             <br />
           </select>
         </div>
-        <button type="submit" value="Submit" onClick="return empty()">
-          Check
-        </button>
+        <button type="submit" value="Submit">Check</button>
       </div>
     </form>
-    <footer>Designed by Prime Developer</footer>
   </body>
   <script src="script.js"></script>
 </html>
