@@ -1,79 +1,96 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Love App</title>
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;900&display=swap"
-      rel="stylesheet"
-    /> -->
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- Heading -->
-    <div class="heading">
-      <h1>KNOW YOUR LOVE SCORE</h1>
-      <i>...Find out the love score between you and your friends</i>
-    </div>
-    <!-- Love Score -->
-    <div class="love-score"></div>
-    <!-- Input details -->
-    <form>
-      <div class="inputs">
-        <!-- Your name -->
-        <div>
-          <label>Your Name:</label><br />
-          <input
-            type="text"
-            id="input"
-            required
-            autocomplete="off"
-          /><br /><br />
-          <!-- Your age -->
-          <label>Your Age:</label><br />
-          <input type="number" id="input" min="1" required autocomplete="off" />
+    <main class="container">
+      <header class="heading">
+        <h1>Know Your Love Score</h1>
+        <p><i>Find out the love score between you and your friends</i></p>
+        <div id="loveScore" class="love-score hidden">💖 Love Score: 86%</div>
+      </header>
+
+      <form id="love-form">
+        <div class="inputs">
+          <div class="input-group">
+            <label for="your-name">Your Name:</label>
+            <input
+              type="text"
+              id="your-name"
+              name="yourName"
+              class="input"
+              required
+              autocomplete="off"
+            />
+          </div>
+
+          <div class="input-group">
+            <label for="your-age">Your Age:</label>
+            <input
+              type="number"
+              id="your-age"
+              name="yourAge"
+              class="input"
+              min="1"
+              required
+            />
+          </div>
+
+          <div class="input-group">
+            <label for="partner-name">Partner's Name:</label>
+            <input
+              type="text"
+              id="partner-name"
+              name="partnerName"
+              class="input"
+              required
+              autocomplete="off"
+            />
+          </div>
+
+          <div class="input-group">
+            <label for="partner-age">Partner's Age:</label>
+            <input
+              type="number"
+              id="partner-age"
+              name="partnerAge"
+              class="input"
+              min="1"
+              required
+            />
+          </div>
         </div>
-        <!-- Partner's name -->
-        <div>
-          <label>Partner's Name:</label><br />
-          <input
-            type="text"
-            id="input"
-            required
-            autocomplete="off"
-          /><br /><br />
-          <label>Partner's Age:</label><br />
-          <input type="number" id="input" min="1" required autocomplete="off" />
+
+        <div class="questions">
+          <div class="input-group">
+            <label for="time-spent">How long have you been together?</label>
+            <select id="time-spent" name="timeSpent" class="input" required>
+              <option value="1">Less than a year</option>
+              <option value="2">About a year plus</option>
+              <option value="3">Two to Five years</option>
+              <option value="4">More than Five years</option>
+            </select>
+          </div>
+
+          <div class="input-group">
+            <label for="talk-time">How often do you communicate?</label>
+            <select id="talk-time" name="talkTime" class="input" required>
+              <option value="1">We don't talk anymore</option>
+              <option value="2">Once in a while</option>
+              <option value="3">It's been long we spoke</option>
+              <option value="4">We communicate frequently</option>
+            </select>
+          </div>
+
+          <button type="submit" class="submit-button">Check</button>
         </div>
-      </div>
-      <!-- Questions -->
-      <div class="questions">
-        <div>
-          <label>How long have you been together?</label><br />
-          <select id="time-spent">
-            <option value="1">Less than a year</option>
-            <option value="2">About a year plus</option>
-            <option value="3">Two to Five years</option>
-            <option value="4">More than Five years</option>
-            <br />
-          </select>
-        </div>
-        <div>
-          <label>How often do you communicate with each other?</label><br />
-          <select id="talk-time">
-            <option value="1">We don't talk anymore</option>
-            <option value="2">Once in a while</option>
-            <option value="3">It's been long we spoke</option>
-            <option value="4">We communicate frequently</option>
-            <br />
-          </select>
-        </div>
-        <button type="submit" value="Submit">Check</button>
-      </div>
-    </form>
+      </form>
+    </main>
+
+    <script src="script.js"></script>
   </body>
-  <script src="script.js"></script>
 </html>
