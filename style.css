@@ -40,6 +40,7 @@ body {
   margin: 1rem 0 2rem;
   color: #ff3366;
   background: linear-gradient(to right, #ff4d88, #ff99cc);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: opacity 0.3s ease;
@@ -127,6 +128,7 @@ button[type="submit"]:hover {
 }
 
 /* Media Queries */
+
 @media (max-width: 768px) {
   .inputs {
     flex-direction: column;

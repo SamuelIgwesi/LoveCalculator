@@ -20,7 +20,7 @@ function checkInputFields() {
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  if (checkInputFields()) {
+  if (checkInputFields() && button.innerText == "Check") {
     let lovePercentage;
 
     // Conditions for strong love score
